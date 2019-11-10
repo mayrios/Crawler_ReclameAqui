@@ -44,7 +44,7 @@ for x in texto:
 	texto_tratado = processa_texto(x[0])
 	
 	arquivo_tratado = open('arquivo_tratado.csv', 'a')
-	arquivo_tratado.write(texto_tratado + '; \n')
+	arquivo_tratado.write(texto_tratado + '\n')
 	#print(texto_tratado + ';')
 	arquivo_tratado.close()
 
