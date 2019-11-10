@@ -1,19 +1,9 @@
 import nltk
 from nltk.corpus import stopwords
 import string
-import pandas as pd
 import csv
 import re
 import unicodedata
-
-
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import classification_report, confusion_matrix
-
 
 arquivo = open('tituloscomsentimentos.csv', encoding='latin-1')
 texto = csv.reader(arquivo)
@@ -54,8 +44,8 @@ for x in texto:
 	texto_tratado = processa_texto(x[0])
 	
 	arquivo_tratado = open('arquivo_tratado.csv', 'a')
-	arquivo_tratado.write(texto_tratado + ';')
-	print(texto_tratado + ';')
+	arquivo_tratado.write(texto_tratado + '; \n')
+	#print(texto_tratado + ';')
 	arquivo_tratado.close()
 
 #nltk.download()
